@@ -1,0 +1,13 @@
+#! /bin/bash
+array=( [1]=0 [2]=0 [3]=0 [4]=0 [5]=0 [6]=0 )
+for (( i=1; i<=700; i++))
+do
+cast=$(( 1 + RANDOM % 6 ))
+array[$cast]=$(( array[cast]+1 ))
+done
+echo "единицы: ${array[1]}"
+echo "двойки: ${array[2]}"
+echo "тройки: ${array[3]}"
+echo "четверки: ${array[4]}"
+echo "пятерки: ${array[5]}"
+echo "шестерки: ${array[6]}"

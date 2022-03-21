@@ -1,0 +1,14 @@
+#! /bin/bash
+read -r string
+if [ ${#string} -eq 1 ]
+then
+case $string in
+[[:lower:]] ) echo "Lower symbol";;
+[[:upper:]] ) echo "Upper symbol";;
+[[:digit:]] ) echo "Number";;
+[[:punct:]] ) echo "Punctuation symbol";;
+* ) echo "Other";;
+esac
+else
+echo "We didn't write 1 symbol("
+fi

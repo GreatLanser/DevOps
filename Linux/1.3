@@ -1,0 +1,8 @@
+#! /bin/bash
+read -t 5 -r text
+if [[ $? -gt 128 ]]
+then
+echo -e "\nTimeout"
+else
+echo "$text"
+fi

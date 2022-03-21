@@ -1,0 +1,15 @@
+#! /bin/bash
+if [ "$1" ]
+then
+val="$1"
+else
+read -r -p 'Enter сurrency (eur/usd): ' val
+fi
+
+if [ "$val" != "usd" ] && [ "$val" != "eur" ]
+then
+echo Error input
+else
+curl -s 'https://myfin.by/currency/minsk' # | grep "type=\"$val\"" |\
+# sed -e "s/.*type=\"$val\" data-val=\"//; s/\" type=\"text\".*//"
+fi
